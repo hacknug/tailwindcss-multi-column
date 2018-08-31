@@ -80,3 +80,7 @@ require('tailwindcss-multi-column')({
 .col-none { column-span: none; }
 .col-all { column-span: all; }
 ```
+
+## Credits
+
+This plugin was inspired by [@LoganDark](https://github.com/LoganDark) and [@codytooker](https://github.com/codytooker) discussion here: https://github.com/tailwindcss/tailwindcss/issues/540
