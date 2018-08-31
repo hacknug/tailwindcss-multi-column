@@ -22,7 +22,7 @@ module.exports = function (options = {}) {
     }))
 
     widths = _.map(widths, (width, name) => ({
-      [`.${e(`col-w-${name}`)}`]: { 'column-width': width },
+      [`.${e(`col-w${getName(name)}`)}`]: { 'column-width': width },
     }))
 
     const ruleColors = _.map(rules.colors, (color, name) => ({
