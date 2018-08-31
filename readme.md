@@ -24,6 +24,11 @@ By default the plugin uses the `borderColors` and `borderWidths` properties from
 ```js
 require('tailwindcss-multi-column')({
   counts: [1, 2],
+  gaps: {
+    'sm': '1rem',
+    'md': '1.5rem',
+    'lg': '2rem',
+  },
   widths: {
     'sm': '120px',
     'md': '240px',
@@ -49,6 +54,10 @@ require('tailwindcss-multi-column')({
 .col-count-1 { column-count: 1; }
 .col-count-2 { column-count: 2; }
 .col-count-3 { column-count: 3; }
+
+.col-gap-sm { column-gap: 1rem; }
+.col-gap-md { column-gap: 1.5rem; }
+.col-gap-lg { column-gap: 2rem; }
 
 .col-w-sm { column-width: 120px; }
 .col-w-md { column-width: 240px; }

@@ -2,7 +2,7 @@ const _ = require('lodash')
 
 module.exports = function (options = {}) {
   return function ({ addUtilities, config, e }) {
-    let { counts, widths, rules, variants } = _.defaults(options, {
+    let { counts, gaps, widths, rules, variants } = _.defaults(options, {
       counts: [1, 2, 3],
       rules: {
         colors: config('borderColors'),
@@ -15,6 +15,10 @@ module.exports = function (options = {}) {
     counts = _.map(counts, (count) => ({
       [`.${e(`col-count-${count}`)}`]: { 'column-count': count },
       [`.${e(`col-count-${count}`)}`]: { 'column-count': count },
+    }))
+
+    gaps = _.map(gaps, (gap, name) => ({
+      [`.${e(`col-gap${getName(name)}`)}`]: { 'column-gap': gap },
     }))
 
     widths = _.map(widths, (width, name) => ({
@@ -30,6 +34,7 @@ module.exports = function (options = {}) {
     }))
 
     addUtilities(counts, variants)
+    addUtilities(gaps, variants)
     addUtilities(widths, variants)
     addUtilities(ruleColors, variants)
     addUtilities(ruleWidths, variants)
