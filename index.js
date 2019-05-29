@@ -1,66 +1,71 @@
-const _ = require('lodash')
+var _ = require('lodash')
+var flatten = require('flat')
 
-module.exports = function (options = {}) {
-  return function ({ addUtilities, config, e }) {
-    let { counts, gaps, widths, rules, variants } = _.defaults(options, {
-      counts: [1, 2, 3],
-      rules: {
-        colors: config('borderColors'),
-        widths: config('borderWidths'),
-      },
-    })
 
-    const getName = (name) => name === 'default' ? '' : `-${name}`
+const FLATTEN_CONFIG = { delimiter: '-', maxDepth: 2 }
+const getName = name => name.split('-default').join('')
 
-    counts = _.map(counts, (count) => ({
-      [`.${e(`col-count-${count}`)}`]: { 'column-count': count },
-      [`.${e(`col-count-${count}`)}`]: { 'column-count': count },
-    }))
 
-    gaps = _.map(gaps, (gap, name) => ({
-      [`.${e(`col-gap${getName(name)}`)}`]: { 'column-gap': gap },
-    }))
+module.exports = function () {
+  return function ({
+    addUtilities, addComponents, addBase, addVariant,
+    e, prefix, theme, variants, config,
+  }) {
+    const buildConfig = (themeKey, ...fallbackKeys) => {
+      return buildConfigFromTheme(themeKey, ...fallbackKeys) || buildConfigFromArray(themeKey)
+    }
+    const buildConfigFromTheme = (themeKey, ...fallbackKeys) => {
+      const buildObject = ([ modifier, value ]) => [ modifier, { [themeKey]: value } ]
+      const getThemeSettings = (themeKey, fallbackKeys) => {
+        const [newThemeKey, ...newFallbackKeys] = fallbackKeys || []
+        return theme(themeKey, false) || (fallbackKeys.length && getThemeSettings(newThemeKey, [...newFallbackKeys]))
+      }
 
-    widths = _.map(widths, (width, name) => ({
-      [`.${e(`col-w${getName(name)}`)}`]: { 'column-width': width },
-    }))
+      const themeSettings = getThemeSettings(themeKey, fallbackKeys)
+      const themeObject = _.isArray(themeSettings) ? _.zipObject(themeSettings, themeSettings) : themeSettings
+      const themeEntries = themeSettings && Object
+        .entries(flatten(themeObject, FLATTEN_CONFIG))
+        .map(entry => buildObject(entry))
 
-    const ruleColors = _.map(rules.colors, (color, name) => ({
-      [`.${e(`col-rule${getName(name)}`)}`]: { 'column-rule-color': color },
-    }))
+      return themeSettings ? _.fromPairs(themeEntries) : false
+    }
+    const buildConfigFromArray = (property) => {
+      const defaultSettings = defaultValues[property]
+      const defaultEntries = defaultSettings && defaultSettings
+        .map((value) => ([value, { [property]: value }]))
 
-    const ruleWidths = _.map(rules.widths, (width, name) => ({
-      [`.${e(`col-rule${getName(name)}`)}`]: { 'column-rule-width': width },
-    }))
+      return defaultSettings ? _.fromPairs(defaultEntries) : false
+    }
 
-    addUtilities(counts, variants)
-    addUtilities(gaps, variants)
-    addUtilities(widths, variants)
-    addUtilities(ruleColors, variants)
-    addUtilities(ruleWidths, variants)
-    addUtilities(
-      {
-        // Column-Rule Style
-        '.col-rule-none': { columnRuleStyle: 'none' },
-        '.col-rule-hidden': { columnRuleStyle: 'hidden' },
-        '.col-rule-dotted': { columnRuleStyle: 'dotted' },
-        '.col-rule-dashed': { columnRuleStyle: 'dashed' },
-        '.col-rule-solid': { columnRuleStyle: 'solid' },
-        '.col-rule-double': { columnRuleStyle: 'double' },
-        '.col-rule-groove': { columnRuleStyle: 'groove' },
-        '.col-rule-ridge': { columnRuleStyle: 'ridge' },
-        '.col-rule-inset': { columnRuleStyle: 'inset' },
-        '.col-rule-outset': { columnRuleStyle: 'outset' },
+    const defaultValues = {
+      columnCount: [1, 2, 3],
+      columnRuleStyle: ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset'],
+      columnFill: ['auto', 'balance', 'balance-all'],
+      columnSpan: ['none', 'all'],
+    }
 
-        // Column-Fill
-        '.col-auto': { columnFill: 'auto' },
-        '.col-balance': { columnFill: 'balance' },
-        '.col-balance-all': { columnFill: 'balance-all' },
+    const pluginUtilities = {
+      'col-count': buildConfig('columnCount'),
+      'col-gap': buildConfig('columnGap', 'gap', 'gridGap'),
+      'col-w': buildConfig('columnWidth'),
+      'col-rule-color': buildConfig('columnRuleColor', 'borderColor'),
+      'col-rule-width': buildConfig('columnRuleWidth', 'borderWidth'),
+      'col-rule-style': buildConfig('columnRuleStyle'),
+      'col-fill': buildConfig('columnFill'),
+      'col-span': buildConfig('columnSpan'),
+    }
 
-        // Column-Span
-        '.col-none': { columnSpan: 'none' },
-        '.col-all': { columnSpan: 'all' },
-      }, variants
-    )
+    Object.entries(pluginUtilities)
+      .filter(([ modifier, values ]) => !_.isEmpty(values))
+      .forEach(([ modifier, values ]) => {
+        const className = _.kebabCase(modifier).split('-').slice(0, 2).join('-')
+        const variantName = Object.keys(Object.entries(values)[0][1])[0]
+        const utilities = flatten({ [`.${e(`${className}`)}`]: values }, FLATTEN_CONFIG)
+
+        addUtilities(
+          _.mapKeys(utilities, (value, key) => getName(key)),
+          variants(variantName, ['responsive'])
+        )
+      })
   }
 }

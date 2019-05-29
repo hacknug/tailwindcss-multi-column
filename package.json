@@ -2,29 +2,40 @@
   "name": "tailwindcss-multi-column",
   "version": "0.2.0",
   "description": "Multi-Column utilities for Tailwind CSS.",
-  "main": "index.js",
+  "keywords": [
+    "plugin",
+    "tailwind",
+    "tailwind css",
+    "tailwindcss",
+    "tailwindcss-plugin"
+  ],
+  "homepage": "https://github.com/hacknug/tailwindcss-multi-column#readme",
+  "bugs": {
+    "url": "https://github.com/hacknug/tailwindcss-multi-column/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hacknug/tailwindcss-multi-column.git"
   },
-  "keywords": [
-    "tailwind",
-    "tailwindcss",
-    "tailwind css",
-    "tailwindcss-plugin",
-    "plugin"
-  ],
+  "license": "MIT",
   "author": {
     "name": "Nestor Vera",
     "email": "nestorvera@me.com",
     "url": "https://nestor.rip/"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hacknug/tailwindcss-multi-column/issues"
+  "main": "index.js",
+  "scripts": {
+    "dev": "jest --watchAll",
+    "test": "jest"
   },
-  "homepage": "https://github.com/hacknug/tailwindcss-multi-column#readme",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "flat": "^4.1.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "jest-matcher-css": "^1.0.3",
+    "postcss": "^7.0.16",
+    "tailwindcss": "^1.0.1"
   }
 }
