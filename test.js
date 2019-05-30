@@ -19,7 +19,7 @@ const generatePluginCss = (testConfig = {}, pluginOptions = {}) => {
         md: '240px',
         lg: '360px',
       },
-      columnRuleColor: { 'tailwind': '#38b2ac' },
+      columnRuleColor: { tailwind: '#38b2ac' },
       columnRuleWidth: {
         default: '1px',
         sm: '2px',

@@ -19,35 +19,50 @@ yarn add -D tailwindcss-multi-column
 
 ## Usage
 
-By default the plugin uses the `borderColors` and `borderWidths` properties from the config file to generate the rules classes. You can change that to whatever, just keep in mind if you have a `default` key in both objects, `.column-rule` will set both the `column-rule-color` and `column-rule-width` of the element.
+By default the plugin uses the `borderColor` and `borderWidth` properties from your theme to generate the `columnRuleColor` and `columnRuleWidth` classes. You can change that to whatever, just keep in mind if you have a `default` key in both objects (also `columnRuleStyle`), `.column-rule` will set both the `column-rule-color` and `column-rule-width` of the element.
+
+This means you won't be able to use `@apply` with those classes. Let me know if that's an issue for you and we can sort it out.
 
 ```js
-require('tailwindcss-multi-column')({
-  counts: [1, 2],
-  gaps: {
-    'sm': '1rem',
-    'md': '1.5rem',
-    'lg': '2rem',
-  },
-  widths: {
-    'sm': '120px',
-    'md': '240px',
-    'lg': '360px',
-  },
-  rules: {
-    colors: {
-      'red': 'red',
-      'lime': 'lime',
-      'blue': 'blue',
+// tailwind.config.js
+{
+  theme: { // defaults to these values
+    columnCount: [ 1, 2, 3 ],
+    columnGap: { // will fallback to 'gap' || 'gridGap' values
+      // sm: '1rem',
+      // md: '1.5rem',
+      // lg: '2rem',
     },
-    widths: {
-      default: '1px',
-      'sm': '2px',
-      'md': '3px',
+    columnWidth: {
+      // sm: '120px',
+      // md: '240px',
+      // lg: '360px',
     },
+    columnRuleColor: false, // will fallback to `borderColor` values
+    columnRuleWidth: false, // will fallback to `borderWidth` values
+    columnRuleStyle: [
+      'none', 'hidden', 'dotted', 'dashed', 'solid',
+      'double', 'groove', 'ridge', 'inset', 'outset',
+    ],
+    columnFill: [ 'auto', 'balance', 'balance-all' ],
+    columnSpan: [ 'none', 'all' ],
   },
-  variants: [],
-}),
+
+  variants: { // all the following default to ['responsive']
+    columnCount: ['responsive'],
+    columnGap: ['responsive'],
+    columnWidth: ['responsive'],
+    columnRuleColor: ['responsive'],
+    columnRuleWidth: ['responsive'],
+    columnRuleStyle: ['responsive'],
+    columnFill: ['responsive'],
+    columnSpan: ['responsive'],
+  },
+
+  plugins: [
+    require('tailwindcss-multi-column'), // no options to configure
+  ],
+}
 ```
 
 ```css
@@ -69,7 +84,7 @@ require('tailwindcss-multi-column')({
 
 .col-rule { column-rule-width: 1px; }
 .col-rule-sm { column-rule-width: 2px; }
-.col-rule-md { column-rule-width: 3px; }
+.col-rule-md { column-rule-width: 4px; }
 
 .col-rule-none { column-rule-style: none; }
 .col-rule-hidden { column-rule-style: hidden; }
@@ -82,12 +97,12 @@ require('tailwindcss-multi-column')({
 .col-rule-inset { column-rule-style: inset; }
 .col-rule-outset { column-rule-style: outset; }
 
-.col-auto { column-fill: auto; }
-.col-balance { column-fill: balance; }
-.col-balance-all { column-fill: balance-all; }
+.col-fill-auto { column-fill: auto; }
+.col-fill-balance { column-fill: balance; }
+.col-fill-balance-all { column-fill: balance-all; }
 
-.col-none { column-span: none; }
-.col-all { column-span: all; }
+.col-span-none { column-span: none; }
+.col-span-all { column-span: all; }
 ```
 
 ## Credits
