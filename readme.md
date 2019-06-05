@@ -60,7 +60,7 @@ This means you won't be able to use `@apply` with those classes. Let me know if 
   },
 
   plugins: [
-    require('tailwindcss-multi-column'), // no options to configure
+    require('tailwindcss-multi-column')(), // no options to configure
   ],
 }
 ```
