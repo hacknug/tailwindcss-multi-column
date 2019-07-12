@@ -60,7 +60,8 @@ module.exports = function () {
       .forEach(([ modifier, values ]) => {
         const className = _.kebabCase(modifier).split('-').slice(0, 2).join('-')
         const variantName = Object.keys(Object.entries(values)[0][1])[0]
-        const utilities = flatten({ [`.${e(`${className}`)}`]: values }, FLATTEN_CONFIG)
+        const escapedValues = _.fromPairs(Object.entries(values).map(([modifier, value]) => [e(modifier), value]))
+        const utilities = flatten({ [`.${e(`${className}`)}`]: escapedValues }, FLATTEN_CONFIG)
 
         addUtilities(
           _.mapKeys(utilities, (value, key) => getName(key)),

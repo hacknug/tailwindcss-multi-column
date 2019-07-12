@@ -124,6 +124,95 @@ test('generates default utilities and responsive variants', () => {
   return generatePluginCss(testConfig).then(css => expect(css).toMatchCss(expectedCss))
 })
 
+test('modifier can contain fractions', () => {
+  const testConfig = {
+    theme: {
+      columnGap: { '1/2': '50%' },
+    },
+  }
+  const expectedCss = `
+    .col-count-1 { column-count: 1 }
+    .col-count-2 { column-count: 2 }
+    .col-count-3 { column-count: 3 }
+
+    .col-gap-sm { column-gap: 1rem }
+    .col-gap-md { column-gap: 1.5rem }
+    .col-gap-lg { column-gap: 2rem }
+    .col-gap-1\\/2 { column-gap: 50% }
+
+    .col-w-sm { column-width: 120px }
+    .col-w-md { column-width: 240px }
+    .col-w-lg { column-width: 360px }
+
+    .col-rule-tailwind { column-rule-color: #38b2ac }
+
+    .col-rule { column-rule-width: 1px }
+    .col-rule-sm { column-rule-width: 2px }
+    .col-rule-md { column-rule-width: 4px }
+    .col-rule-lg { column-rule-width: 8px }
+
+    .col-rule-none { column-rule-style: none }
+    .col-rule-hidden { column-rule-style: hidden }
+    .col-rule-dotted { column-rule-style: dotted }
+    .col-rule-dashed { column-rule-style: dashed }
+    .col-rule-solid { column-rule-style: solid }
+    .col-rule-double { column-rule-style: double }
+    .col-rule-groove { column-rule-style: groove }
+    .col-rule-ridge { column-rule-style: ridge }
+    .col-rule-inset { column-rule-style: inset }
+    .col-rule-outset { column-rule-style: outset }
+
+    .col-fill-auto { column-fill: auto }
+    .col-fill-balance { column-fill: balance }
+    .col-fill-balance-all { column-fill: balance-all }
+
+    .col-span-none { column-span: none }
+    .col-span-all { column-span: all }
+
+    @media (min-width: 640px) {
+      .sm\\:col-count-1 { column-count: 1 }
+      .sm\\:col-count-2 { column-count: 2 }
+      .sm\\:col-count-3 { column-count: 3 }
+
+      .sm\\:col-gap-sm { column-gap: 1rem }
+      .sm\\:col-gap-md { column-gap: 1.5rem }
+      .sm\\:col-gap-lg { column-gap: 2rem }
+      .sm\\:col-gap-1\\/2 { column-gap: 50% }
+
+      .sm\\:col-w-sm { column-width: 120px }
+      .sm\\:col-w-md { column-width: 240px }
+      .sm\\:col-w-lg { column-width: 360px }
+
+      .sm\\:col-rule-tailwind { column-rule-color: #38b2ac }
+
+      .sm\\:col-rule { column-rule-width: 1px }
+      .sm\\:col-rule-sm { column-rule-width: 2px }
+      .sm\\:col-rule-md { column-rule-width: 4px }
+      .sm\\:col-rule-lg { column-rule-width: 8px }
+
+      .sm\\:col-rule-none { column-rule-style: none }
+      .sm\\:col-rule-hidden { column-rule-style: hidden }
+      .sm\\:col-rule-dotted { column-rule-style: dotted }
+      .sm\\:col-rule-dashed { column-rule-style: dashed }
+      .sm\\:col-rule-solid { column-rule-style: solid }
+      .sm\\:col-rule-double { column-rule-style: double }
+      .sm\\:col-rule-groove { column-rule-style: groove }
+      .sm\\:col-rule-ridge { column-rule-style: ridge }
+      .sm\\:col-rule-inset { column-rule-style: inset }
+      .sm\\:col-rule-outset { column-rule-style: outset }
+
+      .sm\\:col-fill-auto { column-fill: auto }
+      .sm\\:col-fill-balance { column-fill: balance }
+      .sm\\:col-fill-balance-all { column-fill: balance-all }
+
+      .sm\\:col-span-none { column-span: none }
+      .sm\\:col-span-all { column-span: all }
+    }
+  `
+
+  return generatePluginCss(testConfig).then(css => expect(css).toMatchCss(expectedCss))
+})
+
 test('variants can be customized', () => {
   const testConfig = {
     variants: {
