@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-multi-column",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Multi-Column utilities for Tailwind CSS.",
   "keywords": [
     "plugin",
