@@ -1,16 +1,11 @@
-var _ = require('lodash')
-var flatten = require('flat')
-
+const _ = require('lodash')
+const flatten = require('flat').flatten
 
 const FLATTEN_CONFIG = { delimiter: '-', maxDepth: 2 }
 const getName = name => name.split('-default').join('')
 
-
 module.exports = function () {
-  return function ({
-    addUtilities, addComponents, addBase, addVariant,
-    e, prefix, theme, variants, config,
-  }) {
+  return function ({ addUtilities, e, theme, variants }) {
     const buildConfig = (themeKey, ...fallbackKeys) => {
       return buildConfigFromTheme(themeKey, ...fallbackKeys) || buildConfigFromArray(themeKey)
     }
@@ -45,18 +40,18 @@ module.exports = function () {
     }
 
     const pluginUtilities = {
-      'col-count': buildConfig('columnCount'),
-      'col-gap': buildConfig('columnGap', 'gap', 'gridGap'),
-      'col-w': buildConfig('columnWidth'),
-      'col-rule-color': buildConfig('columnRuleColor', 'borderColor'),
-      'col-rule-width': buildConfig('columnRuleWidth', 'borderWidth'),
-      'col-rule-style': buildConfig('columnRuleStyle'),
-      'col-fill': buildConfig('columnFill'),
-      'col-span': buildConfig('columnSpan'),
+      'column-count': buildConfig('columnCount'),
+      'column-gap': buildConfig('columnGap', 'gap', 'gridGap'),
+      'column-width': buildConfig('columnWidth', 'gap', 'gridGap'),
+      'column-rule-color': buildConfig('columnRuleColor', 'borderColor'),
+      'column-rule-width': buildConfig('columnRuleWidth', 'borderWidth'),
+      'column-rule-style': buildConfig('columnRuleStyle'),
+      'column-fill': buildConfig('columnFill'),
+      'column-span': buildConfig('columnSpan'),
     }
 
     Object.entries(pluginUtilities)
-      .filter(([ modifier, values ]) => !_.isEmpty(values))
+      .filter(([ values ]) => !_.isEmpty(values))
       .forEach(([ modifier, values ]) => {
         const className = _.kebabCase(modifier).split('-').slice(0, 2).join('-')
         const variantName = Object.keys(Object.entries(values)[0][1])[0]

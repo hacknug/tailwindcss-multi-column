@@ -44,80 +44,80 @@ expect.extend({ toMatchCss: require('jest-matcher-css') })
 test('generates default utilities and responsive variants', () => {
   const testConfig = {}
   const expectedCss = `
-    .col-count-1 { column-count: 1 }
-    .col-count-2 { column-count: 2 }
-    .col-count-3 { column-count: 3 }
+    .column-count-1 { column-count: 1 }
+    .column-count-2 { column-count: 2 }
+    .column-count-3 { column-count: 3 }
 
-    .col-gap-sm { column-gap: 1rem }
-    .col-gap-md { column-gap: 1.5rem }
-    .col-gap-lg { column-gap: 2rem }
+    .column-gap-sm { column-gap: 1rem }
+    .column-gap-md { column-gap: 1.5rem }
+    .column-gap-lg { column-gap: 2rem }
 
-    .col-w-sm { column-width: 120px }
-    .col-w-md { column-width: 240px }
-    .col-w-lg { column-width: 360px }
+    .column-width-sm { column-width: 120px }
+    .column-width-md { column-width: 240px }
+    .column-width-lg { column-width: 360px }
 
-    .col-rule-tailwind { column-rule-color: #38b2ac }
+    .column-rule-tailwind { column-rule-color: #38b2ac }
 
-    .col-rule { column-rule-width: 1px }
-    .col-rule-sm { column-rule-width: 2px }
-    .col-rule-md { column-rule-width: 4px }
-    .col-rule-lg { column-rule-width: 8px }
+    .column-rule { column-rule-width: 1px }
+    .column-rule-sm { column-rule-width: 2px }
+    .column-rule-md { column-rule-width: 4px }
+    .column-rule-lg { column-rule-width: 8px }
 
-    .col-rule-none { column-rule-style: none }
-    .col-rule-hidden { column-rule-style: hidden }
-    .col-rule-dotted { column-rule-style: dotted }
-    .col-rule-dashed { column-rule-style: dashed }
-    .col-rule-solid { column-rule-style: solid }
-    .col-rule-double { column-rule-style: double }
-    .col-rule-groove { column-rule-style: groove }
-    .col-rule-ridge { column-rule-style: ridge }
-    .col-rule-inset { column-rule-style: inset }
-    .col-rule-outset { column-rule-style: outset }
+    .column-rule-none { column-rule-style: none }
+    .column-rule-hidden { column-rule-style: hidden }
+    .column-rule-dotted { column-rule-style: dotted }
+    .column-rule-dashed { column-rule-style: dashed }
+    .column-rule-solid { column-rule-style: solid }
+    .column-rule-double { column-rule-style: double }
+    .column-rule-groove { column-rule-style: groove }
+    .column-rule-ridge { column-rule-style: ridge }
+    .column-rule-inset { column-rule-style: inset }
+    .column-rule-outset { column-rule-style: outset }
 
-    .col-fill-auto { column-fill: auto }
-    .col-fill-balance { column-fill: balance }
-    .col-fill-balance-all { column-fill: balance-all }
+    .column-fill-auto { column-fill: auto }
+    .column-fill-balance { column-fill: balance }
+    .column-fill-balance-all { column-fill: balance-all }
 
-    .col-span-none { column-span: none }
-    .col-span-all { column-span: all }
+    .column-span-none { column-span: none }
+    .column-span-all { column-span: all }
 
     @media (min-width: 640px) {
-      .sm\\:col-count-1 { column-count: 1 }
-      .sm\\:col-count-2 { column-count: 2 }
-      .sm\\:col-count-3 { column-count: 3 }
+      .sm\\:column-count-1 { column-count: 1 }
+      .sm\\:column-count-2 { column-count: 2 }
+      .sm\\:column-count-3 { column-count: 3 }
 
-      .sm\\:col-gap-sm { column-gap: 1rem }
-      .sm\\:col-gap-md { column-gap: 1.5rem }
-      .sm\\:col-gap-lg { column-gap: 2rem }
+      .sm\\:column-gap-sm { column-gap: 1rem }
+      .sm\\:column-gap-md { column-gap: 1.5rem }
+      .sm\\:column-gap-lg { column-gap: 2rem }
 
-      .sm\\:col-w-sm { column-width: 120px }
-      .sm\\:col-w-md { column-width: 240px }
-      .sm\\:col-w-lg { column-width: 360px }
+      .sm\\:column-width-sm { column-width: 120px }
+      .sm\\:column-width-md { column-width: 240px }
+      .sm\\:column-width-lg { column-width: 360px }
 
-      .sm\\:col-rule-tailwind { column-rule-color: #38b2ac }
+      .sm\\:column-rule-tailwind { column-rule-color: #38b2ac }
 
-      .sm\\:col-rule { column-rule-width: 1px }
-      .sm\\:col-rule-sm { column-rule-width: 2px }
-      .sm\\:col-rule-md { column-rule-width: 4px }
-      .sm\\:col-rule-lg { column-rule-width: 8px }
+      .sm\\:column-rule { column-rule-width: 1px }
+      .sm\\:column-rule-sm { column-rule-width: 2px }
+      .sm\\:column-rule-md { column-rule-width: 4px }
+      .sm\\:column-rule-lg { column-rule-width: 8px }
 
-      .sm\\:col-rule-none { column-rule-style: none }
-      .sm\\:col-rule-hidden { column-rule-style: hidden }
-      .sm\\:col-rule-dotted { column-rule-style: dotted }
-      .sm\\:col-rule-dashed { column-rule-style: dashed }
-      .sm\\:col-rule-solid { column-rule-style: solid }
-      .sm\\:col-rule-double { column-rule-style: double }
-      .sm\\:col-rule-groove { column-rule-style: groove }
-      .sm\\:col-rule-ridge { column-rule-style: ridge }
-      .sm\\:col-rule-inset { column-rule-style: inset }
-      .sm\\:col-rule-outset { column-rule-style: outset }
+      .sm\\:column-rule-none { column-rule-style: none }
+      .sm\\:column-rule-hidden { column-rule-style: hidden }
+      .sm\\:column-rule-dotted { column-rule-style: dotted }
+      .sm\\:column-rule-dashed { column-rule-style: dashed }
+      .sm\\:column-rule-solid { column-rule-style: solid }
+      .sm\\:column-rule-double { column-rule-style: double }
+      .sm\\:column-rule-groove { column-rule-style: groove }
+      .sm\\:column-rule-ridge { column-rule-style: ridge }
+      .sm\\:column-rule-inset { column-rule-style: inset }
+      .sm\\:column-rule-outset { column-rule-style: outset }
 
-      .sm\\:col-fill-auto { column-fill: auto }
-      .sm\\:col-fill-balance { column-fill: balance }
-      .sm\\:col-fill-balance-all { column-fill: balance-all }
+      .sm\\:column-fill-auto { column-fill: auto }
+      .sm\\:column-fill-balance { column-fill: balance }
+      .sm\\:column-fill-balance-all { column-fill: balance-all }
 
-      .sm\\:col-span-none { column-span: none }
-      .sm\\:col-span-all { column-span: all }
+      .sm\\:column-span-none { column-span: none }
+      .sm\\:column-span-all { column-span: all }
     }
   `
 
@@ -131,82 +131,82 @@ test('modifier can contain fractions', () => {
     },
   }
   const expectedCss = `
-    .col-count-1 { column-count: 1 }
-    .col-count-2 { column-count: 2 }
-    .col-count-3 { column-count: 3 }
+    .column-count-1 { column-count: 1 }
+    .column-count-2 { column-count: 2 }
+    .column-count-3 { column-count: 3 }
 
-    .col-gap-sm { column-gap: 1rem }
-    .col-gap-md { column-gap: 1.5rem }
-    .col-gap-lg { column-gap: 2rem }
-    .col-gap-1\\/2 { column-gap: 50% }
+    .column-gap-sm { column-gap: 1rem }
+    .column-gap-md { column-gap: 1.5rem }
+    .column-gap-lg { column-gap: 2rem }
+    .column-gap-1\\/2 { column-gap: 50% }
 
-    .col-w-sm { column-width: 120px }
-    .col-w-md { column-width: 240px }
-    .col-w-lg { column-width: 360px }
+    .column-width-sm { column-width: 120px }
+    .column-width-md { column-width: 240px }
+    .column-width-lg { column-width: 360px }
 
-    .col-rule-tailwind { column-rule-color: #38b2ac }
+    .column-rule-tailwind { column-rule-color: #38b2ac }
 
-    .col-rule { column-rule-width: 1px }
-    .col-rule-sm { column-rule-width: 2px }
-    .col-rule-md { column-rule-width: 4px }
-    .col-rule-lg { column-rule-width: 8px }
+    .column-rule { column-rule-width: 1px }
+    .column-rule-sm { column-rule-width: 2px }
+    .column-rule-md { column-rule-width: 4px }
+    .column-rule-lg { column-rule-width: 8px }
 
-    .col-rule-none { column-rule-style: none }
-    .col-rule-hidden { column-rule-style: hidden }
-    .col-rule-dotted { column-rule-style: dotted }
-    .col-rule-dashed { column-rule-style: dashed }
-    .col-rule-solid { column-rule-style: solid }
-    .col-rule-double { column-rule-style: double }
-    .col-rule-groove { column-rule-style: groove }
-    .col-rule-ridge { column-rule-style: ridge }
-    .col-rule-inset { column-rule-style: inset }
-    .col-rule-outset { column-rule-style: outset }
+    .column-rule-none { column-rule-style: none }
+    .column-rule-hidden { column-rule-style: hidden }
+    .column-rule-dotted { column-rule-style: dotted }
+    .column-rule-dashed { column-rule-style: dashed }
+    .column-rule-solid { column-rule-style: solid }
+    .column-rule-double { column-rule-style: double }
+    .column-rule-groove { column-rule-style: groove }
+    .column-rule-ridge { column-rule-style: ridge }
+    .column-rule-inset { column-rule-style: inset }
+    .column-rule-outset { column-rule-style: outset }
 
-    .col-fill-auto { column-fill: auto }
-    .col-fill-balance { column-fill: balance }
-    .col-fill-balance-all { column-fill: balance-all }
+    .column-fill-auto { column-fill: auto }
+    .column-fill-balance { column-fill: balance }
+    .column-fill-balance-all { column-fill: balance-all }
 
-    .col-span-none { column-span: none }
-    .col-span-all { column-span: all }
+    .column-span-none { column-span: none }
+    .column-span-all { column-span: all }
 
     @media (min-width: 640px) {
-      .sm\\:col-count-1 { column-count: 1 }
-      .sm\\:col-count-2 { column-count: 2 }
-      .sm\\:col-count-3 { column-count: 3 }
+      .sm\\:column-count-1 { column-count: 1 }
+      .sm\\:column-count-2 { column-count: 2 }
+      .sm\\:column-count-3 { column-count: 3 }
 
-      .sm\\:col-gap-sm { column-gap: 1rem }
-      .sm\\:col-gap-md { column-gap: 1.5rem }
-      .sm\\:col-gap-lg { column-gap: 2rem }
-      .sm\\:col-gap-1\\/2 { column-gap: 50% }
+      .sm\\:column-gap-sm { column-gap: 1rem }
+      .sm\\:column-gap-md { column-gap: 1.5rem }
+      .sm\\:column-gap-lg { column-gap: 2rem }
+      .sm\\:column-gap-1\\/2 { column-gap: 50% }
 
-      .sm\\:col-w-sm { column-width: 120px }
-      .sm\\:col-w-md { column-width: 240px }
-      .sm\\:col-w-lg { column-width: 360px }
+      .sm\\:column-width-sm { column-width: 120px }
+      .sm\\:column-width-md { column-width: 240px }
+      .sm\\:column-width-lg { column-width: 360px }
 
-      .sm\\:col-rule-tailwind { column-rule-color: #38b2ac }
+      .sm\\:column-rule-tailwind { column-rule-color: #38b2ac }
 
-      .sm\\:col-rule { column-rule-width: 1px }
-      .sm\\:col-rule-sm { column-rule-width: 2px }
-      .sm\\:col-rule-md { column-rule-width: 4px }
-      .sm\\:col-rule-lg { column-rule-width: 8px }
+      .sm\\:column-rule { column-rule-width: 1px }
+      .sm\\:column-rule-sm { column-rule-width: 2px }
+      .sm\\:column-rule-md { column-rule-width: 4px }
+      .sm\\:column-rule-lg { column-rule-width: 8px }
 
-      .sm\\:col-rule-none { column-rule-style: none }
-      .sm\\:col-rule-hidden { column-rule-style: hidden }
-      .sm\\:col-rule-dotted { column-rule-style: dotted }
-      .sm\\:col-rule-dashed { column-rule-style: dashed }
-      .sm\\:col-rule-solid { column-rule-style: solid }
-      .sm\\:col-rule-double { column-rule-style: double }
-      .sm\\:col-rule-groove { column-rule-style: groove }
-      .sm\\:col-rule-ridge { column-rule-style: ridge }
-      .sm\\:col-rule-inset { column-rule-style: inset }
-      .sm\\:col-rule-outset { column-rule-style: outset }
+      .sm\\:column-rule-none { column-rule-style: none }
+      .sm\\:column-rule-hidden { column-rule-style: hidden }
+      .sm\\:column-rule-dotted { column-rule-style: dotted }
+      .sm\\:column-rule-dashed { column-rule-style: dashed }
+      .sm\\:column-rule-solid { column-rule-style: solid }
+      .sm\\:column-rule-double { column-rule-style: double }
+      .sm\\:column-rule-groove { column-rule-style: groove }
+      .sm\\:column-rule-ridge { column-rule-style: ridge }
+      .sm\\:column-rule-inset { column-rule-style: inset }
+      .sm\\:column-rule-outset { column-rule-style: outset }
 
-      .sm\\:col-fill-auto { column-fill: auto }
-      .sm\\:col-fill-balance { column-fill: balance }
-      .sm\\:col-fill-balance-all { column-fill: balance-all }
+      .sm\\:column-fill-auto { column-fill: auto }
+      .sm\\:column-fill-balance { column-fill: balance }
+      .sm\\:column-fill-balance-all { column-fill: balance-all }
 
-      .sm\\:col-span-none { column-span: none }
-      .sm\\:col-span-all { column-span: all }
+      .sm\\:column-span-none { column-span: none }
+      .sm\\:column-span-all { column-span: all }
     }
   `
 
@@ -221,80 +221,80 @@ test('variants can be customized', () => {
     },
   }
   const expectedCss = `
-    .col-count-1 { column-count: 1 }
-    .col-count-2 { column-count: 2 }
-    .col-count-3 { column-count: 3 }
+    .column-count-1 { column-count: 1 }
+    .column-count-2 { column-count: 2 }
+    .column-count-3 { column-count: 3 }
 
-    .col-gap-sm { column-gap: 1rem }
-    .col-gap-md { column-gap: 1.5rem }
-    .col-gap-lg { column-gap: 2rem }
+    .column-gap-sm { column-gap: 1rem }
+    .column-gap-md { column-gap: 1.5rem }
+    .column-gap-lg { column-gap: 2rem }
 
-    .hover\\:col-gap-sm:hover { column-gap: 1rem }
-    .hover\\:col-gap-md:hover { column-gap: 1.5rem }
-    .hover\\:col-gap-lg:hover { column-gap: 2rem }
+    .hover\\:column-gap-sm:hover { column-gap: 1rem }
+    .hover\\:column-gap-md:hover { column-gap: 1.5rem }
+    .hover\\:column-gap-lg:hover { column-gap: 2rem }
 
-    .col-w-sm { column-width: 120px }
-    .col-w-md { column-width: 240px }
-    .col-w-lg { column-width: 360px }
+    .column-width-sm { column-width: 120px }
+    .column-width-md { column-width: 240px }
+    .column-width-lg { column-width: 360px }
 
-    .focus\\:col-w-sm:focus { column-width: 120px }
-    .focus\\:col-w-md:focus { column-width: 240px }
-    .focus\\:col-w-lg:focus { column-width: 360px }
+    .focus\\:column-width-sm:focus { column-width: 120px }
+    .focus\\:column-width-md:focus { column-width: 240px }
+    .focus\\:column-width-lg:focus { column-width: 360px }
 
-    .col-rule-tailwind { column-rule-color: #38b2ac }
+    .column-rule-tailwind { column-rule-color: #38b2ac }
 
-    .col-rule { column-rule-width: 1px }
-    .col-rule-sm { column-rule-width: 2px }
-    .col-rule-md { column-rule-width: 4px }
-    .col-rule-lg { column-rule-width: 8px }
+    .column-rule { column-rule-width: 1px }
+    .column-rule-sm { column-rule-width: 2px }
+    .column-rule-md { column-rule-width: 4px }
+    .column-rule-lg { column-rule-width: 8px }
 
-    .col-rule-none { column-rule-style: none }
-    .col-rule-hidden { column-rule-style: hidden }
-    .col-rule-dotted { column-rule-style: dotted }
-    .col-rule-dashed { column-rule-style: dashed }
-    .col-rule-solid { column-rule-style: solid }
-    .col-rule-double { column-rule-style: double }
-    .col-rule-groove { column-rule-style: groove }
-    .col-rule-ridge { column-rule-style: ridge }
-    .col-rule-inset { column-rule-style: inset }
-    .col-rule-outset { column-rule-style: outset }
+    .column-rule-none { column-rule-style: none }
+    .column-rule-hidden { column-rule-style: hidden }
+    .column-rule-dotted { column-rule-style: dotted }
+    .column-rule-dashed { column-rule-style: dashed }
+    .column-rule-solid { column-rule-style: solid }
+    .column-rule-double { column-rule-style: double }
+    .column-rule-groove { column-rule-style: groove }
+    .column-rule-ridge { column-rule-style: ridge }
+    .column-rule-inset { column-rule-style: inset }
+    .column-rule-outset { column-rule-style: outset }
 
-    .col-fill-auto { column-fill: auto }
-    .col-fill-balance { column-fill: balance }
-    .col-fill-balance-all { column-fill: balance-all }
+    .column-fill-auto { column-fill: auto }
+    .column-fill-balance { column-fill: balance }
+    .column-fill-balance-all { column-fill: balance-all }
 
-    .col-span-none { column-span: none }
-    .col-span-all { column-span: all }
+    .column-span-none { column-span: none }
+    .column-span-all { column-span: all }
 
     @media (min-width: 640px) {
-      .sm\\:col-count-1 { column-count: 1 }
-      .sm\\:col-count-2 { column-count: 2 }
-      .sm\\:col-count-3 { column-count: 3 }
+      .sm\\:column-count-1 { column-count: 1 }
+      .sm\\:column-count-2 { column-count: 2 }
+      .sm\\:column-count-3 { column-count: 3 }
 
-      .sm\\:col-rule-tailwind { column-rule-color: #38b2ac }
+      .sm\\:column-rule-tailwind { column-rule-color: #38b2ac }
 
-      .sm\\:col-rule { column-rule-width: 1px }
-      .sm\\:col-rule-sm { column-rule-width: 2px }
-      .sm\\:col-rule-md { column-rule-width: 4px }
-      .sm\\:col-rule-lg { column-rule-width: 8px }
+      .sm\\:column-rule { column-rule-width: 1px }
+      .sm\\:column-rule-sm { column-rule-width: 2px }
+      .sm\\:column-rule-md { column-rule-width: 4px }
+      .sm\\:column-rule-lg { column-rule-width: 8px }
 
-      .sm\\:col-rule-none { column-rule-style: none }
-      .sm\\:col-rule-hidden { column-rule-style: hidden }
-      .sm\\:col-rule-dotted { column-rule-style: dotted }
-      .sm\\:col-rule-dashed { column-rule-style: dashed }
-      .sm\\:col-rule-solid { column-rule-style: solid }
-      .sm\\:col-rule-double { column-rule-style: double }
-      .sm\\:col-rule-groove { column-rule-style: groove }
-      .sm\\:col-rule-ridge { column-rule-style: ridge }
-      .sm\\:col-rule-inset { column-rule-style: inset }
-      .sm\\:col-rule-outset { column-rule-style: outset }
+      .sm\\:column-rule-none { column-rule-style: none }
+      .sm\\:column-rule-hidden { column-rule-style: hidden }
+      .sm\\:column-rule-dotted { column-rule-style: dotted }
+      .sm\\:column-rule-dashed { column-rule-style: dashed }
+      .sm\\:column-rule-solid { column-rule-style: solid }
+      .sm\\:column-rule-double { column-rule-style: double }
+      .sm\\:column-rule-groove { column-rule-style: groove }
+      .sm\\:column-rule-ridge { column-rule-style: ridge }
+      .sm\\:column-rule-inset { column-rule-style: inset }
+      .sm\\:column-rule-outset { column-rule-style: outset }
 
-      .sm\\:col-fill-auto { column-fill: auto }
-      .sm\\:col-fill-balance { column-fill: balance }
-      .sm\\:col-fill-balance-all { column-fill: balance-all }
+      .sm\\:column-fill-auto { column-fill: auto }
+      .sm\\:column-fill-balance { column-fill: balance }
+      .sm\\:column-fill-balance-all { column-fill: balance-all }
 
-      .sm\\:col-span-none { column-span: none }
-      .sm\\:col-span-all { column-span: all }
+      .sm\\:column-span-none { column-span: none }
+      .sm\\:column-span-all { column-span: all }
     }
   `
 
@@ -317,54 +317,54 @@ test('utilities can be customized', () => {
     },
   }
   const expectedCss = `
-    .col-count-2 { column-count: 2 }
-    .col-count-4 { column-count: 4 }
+    .column-count-2 { column-count: 2 }
+    .column-count-4 { column-count: 4 }
 
-    .col-gap-sm { column-gap: 8px }
-    .col-gap-md { column-gap: 16px }
-    .col-gap-lg { column-gap: 24px }
+    .column-gap-sm { column-gap: 8px }
+    .column-gap-md { column-gap: 16px }
+    .column-gap-lg { column-gap: 24px }
 
-    .col-w-4 { column-width: 4px }
-    .col-w-8 { column-width: 8px }
+    .column-width-4 { column-width: 4px }
+    .column-width-8 { column-width: 8px }
 
-    .col-rule-tailwind { column-rule-color: #38b2ac }
+    .column-rule-tailwind { column-rule-color: #38b2ac }
 
-    .col-rule { column-rule-width: 1px }
-    .col-rule-sm { column-rule-width: 2px }
-    .col-rule-md { column-rule-width: 4px }
-    .col-rule-lg { column-rule-width: 8px }
+    .column-rule { column-rule-width: 1px }
+    .column-rule-sm { column-rule-width: 2px }
+    .column-rule-md { column-rule-width: 4px }
+    .column-rule-lg { column-rule-width: 8px }
 
-    .col-rule-dashed { column-rule-style: dashed }
-    .col-rule-solid { column-rule-style: solid }
+    .column-rule-dashed { column-rule-style: dashed }
+    .column-rule-solid { column-rule-style: solid }
 
-    .col-fill-balance { column-fill: balance-all }
+    .column-fill-balance { column-fill: balance-all }
 
-    .col-span-all { column-span: all }
+    .column-span-all { column-span: all }
 
     @media (min-width: 640px) {
-      .sm\\:col-count-2 { column-count: 2 }
-      .sm\\:col-count-4 { column-count: 4 }
+      .sm\\:column-count-2 { column-count: 2 }
+      .sm\\:column-count-4 { column-count: 4 }
 
-      .sm\\:col-gap-sm { column-gap: 8px }
-      .sm\\:col-gap-md { column-gap: 16px }
-      .sm\\:col-gap-lg { column-gap: 24px }
+      .sm\\:column-gap-sm { column-gap: 8px }
+      .sm\\:column-gap-md { column-gap: 16px }
+      .sm\\:column-gap-lg { column-gap: 24px }
 
-      .sm\\:col-w-4 { column-width: 4px }
-      .sm\\:col-w-8 { column-width: 8px }
+      .sm\\:column-width-4 { column-width: 4px }
+      .sm\\:column-width-8 { column-width: 8px }
 
-      .sm\\:col-rule-tailwind { column-rule-color: #38b2ac }
+      .sm\\:column-rule-tailwind { column-rule-color: #38b2ac }
 
-      .sm\\:col-rule { column-rule-width: 1px }
-      .sm\\:col-rule-sm { column-rule-width: 2px }
-      .sm\\:col-rule-md { column-rule-width: 4px }
-      .sm\\:col-rule-lg { column-rule-width: 8px }
+      .sm\\:column-rule { column-rule-width: 1px }
+      .sm\\:column-rule-sm { column-rule-width: 2px }
+      .sm\\:column-rule-md { column-rule-width: 4px }
+      .sm\\:column-rule-lg { column-rule-width: 8px }
 
-      .sm\\:col-rule-dashed { column-rule-style: dashed }
-      .sm\\:col-rule-solid { column-rule-style: solid }
+      .sm\\:column-rule-dashed { column-rule-style: dashed }
+      .sm\\:column-rule-solid { column-rule-style: solid }
 
-      .sm\\:col-fill-balance { column-fill: balance-all }
+      .sm\\:column-fill-balance { column-fill: balance-all }
 
-      .sm\\:col-span-all { column-span: all }
+      .sm\\:column-span-all { column-span: all }
     }
   `
 
@@ -403,100 +403,100 @@ test('uses fallback config values', () => {
     },
   }
   const expectedCss = `
-    .col-count-1 { column-count: 1 }
-    .col-count-2 { column-count: 2 }
-    .col-count-3 { column-count: 3 }
+    .column-count-1 { column-count: 1 }
+    .column-count-2 { column-count: 2 }
+    .column-count-3 { column-count: 3 }
 
-    .col-gap-sm { column-gap: 1rem }
-    .col-gap-md { column-gap: 1.5rem }
-    .col-gap-lg { column-gap: 2rem }
+    .column-gap-sm { column-gap: 1rem }
+    .column-gap-md { column-gap: 1.5rem }
+    .column-gap-lg { column-gap: 2rem }
 
-    .col-w-sm { column-width: 120px }
-    .col-w-md { column-width: 240px }
-    .col-w-lg { column-width: 360px }
+    .column-width-sm { column-width: 120px }
+    .column-width-md { column-width: 240px }
+    .column-width-lg { column-width: 360px }
 
-    .col-rule-transparent { column-rule-color: transparent }
-    .col-rule-black { column-rule-color: #000 }
-    .col-rule-white { column-rule-color: #fff }
-    .col-rule-gray-100 { column-rule-color: #f5f5f5 }
-    .col-rule-gray-200 { column-rule-color: #eeeeee }
-    .col-rule-gray-300 { column-rule-color: #e0e0e0 }
-    .col-rule-gray-400 { column-rule-color: #bdbdbd }
-    .col-rule-gray-500 { column-rule-color: #9e9e9e }
-    .col-rule-gray-600 { column-rule-color: #757575 }
-    .col-rule-gray-700 { column-rule-color: #616161 }
-    .col-rule-gray-800 { column-rule-color: #424242 }
-    .col-rule-gray-900 { column-rule-color: #212121 }
-    .col-rule { column-rule-color: #e0e0e0 }
+    .column-rule-transparent { column-rule-color: transparent }
+    .column-rule-black { column-rule-color: #000 }
+    .column-rule-white { column-rule-color: #fff }
+    .column-rule-gray-100 { column-rule-color: #f5f5f5 }
+    .column-rule-gray-200 { column-rule-color: #eeeeee }
+    .column-rule-gray-300 { column-rule-color: #e0e0e0 }
+    .column-rule-gray-400 { column-rule-color: #bdbdbd }
+    .column-rule-gray-500 { column-rule-color: #9e9e9e }
+    .column-rule-gray-600 { column-rule-color: #757575 }
+    .column-rule-gray-700 { column-rule-color: #616161 }
+    .column-rule-gray-800 { column-rule-color: #424242 }
+    .column-rule-gray-900 { column-rule-color: #212121 }
+    .column-rule-DEFAULT { column-rule-color: #eeeeee }
 
-    .col-rule-2 { column-rule-width: 2px }
-    .col-rule-4 { column-rule-width: 4px }
+    .column-rule-2 { column-rule-width: 2px }
+    .column-rule-4 { column-rule-width: 4px }
 
-    .col-rule-none { column-rule-style: none }
-    .col-rule-hidden { column-rule-style: hidden }
-    .col-rule-dotted { column-rule-style: dotted }
-    .col-rule-dashed { column-rule-style: dashed }
-    .col-rule-solid { column-rule-style: solid }
-    .col-rule-double { column-rule-style: double }
-    .col-rule-groove { column-rule-style: groove }
-    .col-rule-ridge { column-rule-style: ridge }
-    .col-rule-inset { column-rule-style: inset }
-    .col-rule-outset { column-rule-style: outset }
+    .column-rule-none { column-rule-style: none }
+    .column-rule-hidden { column-rule-style: hidden }
+    .column-rule-dotted { column-rule-style: dotted }
+    .column-rule-dashed { column-rule-style: dashed }
+    .column-rule-solid { column-rule-style: solid }
+    .column-rule-double { column-rule-style: double }
+    .column-rule-groove { column-rule-style: groove }
+    .column-rule-ridge { column-rule-style: ridge }
+    .column-rule-inset { column-rule-style: inset }
+    .column-rule-outset { column-rule-style: outset }
 
-    .col-fill-auto { column-fill: auto }
-    .col-fill-balance { column-fill: balance }
-    .col-fill-balance-all { column-fill: balance-all }
+    .column-fill-auto { column-fill: auto }
+    .column-fill-balance { column-fill: balance }
+    .column-fill-balance-all { column-fill: balance-all }
 
-    .col-span-none { column-span: none }
-    .col-span-all { column-span: all }
+    .column-span-none { column-span: none }
+    .column-span-all { column-span: all }
 
     @media (min-width: 640px) {
-      .sm\\:col-count-1 { column-count: 1 }
-      .sm\\:col-count-2 { column-count: 2 }
-      .sm\\:col-count-3 { column-count: 3 }
+      .sm\\:column-count-1 { column-count: 1 }
+      .sm\\:column-count-2 { column-count: 2 }
+      .sm\\:column-count-3 { column-count: 3 }
 
-      .sm\\:col-gap-sm { column-gap: 1rem }
-      .sm\\:col-gap-md { column-gap: 1.5rem }
-      .sm\\:col-gap-lg { column-gap: 2rem }
+      .sm\\:column-gap-sm { column-gap: 1rem }
+      .sm\\:column-gap-md { column-gap: 1.5rem }
+      .sm\\:column-gap-lg { column-gap: 2rem }
 
-      .sm\\:col-w-sm { column-width: 120px }
-      .sm\\:col-w-md { column-width: 240px }
-      .sm\\:col-w-lg { column-width: 360px }
+      .sm\\:column-width-sm { column-width: 120px }
+      .sm\\:column-width-md { column-width: 240px }
+      .sm\\:column-width-lg { column-width: 360px }
 
-      .sm\\:col-rule-transparent { column-rule-color: transparent }
-      .sm\\:col-rule-black { column-rule-color: #000 }
-      .sm\\:col-rule-white { column-rule-color: #fff }
-      .sm\\:col-rule-gray-100 { column-rule-color: #f5f5f5 }
-      .sm\\:col-rule-gray-200 { column-rule-color: #eeeeee }
-      .sm\\:col-rule-gray-300 { column-rule-color: #e0e0e0 }
-      .sm\\:col-rule-gray-400 { column-rule-color: #bdbdbd }
-      .sm\\:col-rule-gray-500 { column-rule-color: #9e9e9e }
-      .sm\\:col-rule-gray-600 { column-rule-color: #757575 }
-      .sm\\:col-rule-gray-700 { column-rule-color: #616161 }
-      .sm\\:col-rule-gray-800 { column-rule-color: #424242 }
-      .sm\\:col-rule-gray-900 { column-rule-color: #212121 }
-      .sm\\:col-rule { column-rule-color: #e0e0e0 }
+      .sm\\:column-rule-transparent { column-rule-color: transparent }
+      .sm\\:column-rule-black { column-rule-color: #000 }
+      .sm\\:column-rule-white { column-rule-color: #fff }
+      .sm\\:column-rule-gray-100 { column-rule-color: #f5f5f5 }
+      .sm\\:column-rule-gray-200 { column-rule-color: #eeeeee }
+      .sm\\:column-rule-gray-300 { column-rule-color: #e0e0e0 }
+      .sm\\:column-rule-gray-400 { column-rule-color: #bdbdbd }
+      .sm\\:column-rule-gray-500 { column-rule-color: #9e9e9e }
+      .sm\\:column-rule-gray-600 { column-rule-color: #757575 }
+      .sm\\:column-rule-gray-700 { column-rule-color: #616161 }
+      .sm\\:column-rule-gray-800 { column-rule-color: #424242 }
+      .sm\\:column-rule-gray-900 { column-rule-color: #212121 }
+      .sm\\:column-rule-DEFAULT { column-rule-color: #eeeeee }
 
-      .sm\\:col-rule-2 { column-rule-width: 2px }
-      .sm\\:col-rule-4 { column-rule-width: 4px }
+      .sm\\:column-rule-2 { column-rule-width: 2px }
+      .sm\\:column-rule-4 { column-rule-width: 4px }
 
-      .sm\\:col-rule-none { column-rule-style: none }
-      .sm\\:col-rule-hidden { column-rule-style: hidden }
-      .sm\\:col-rule-dotted { column-rule-style: dotted }
-      .sm\\:col-rule-dashed { column-rule-style: dashed }
-      .sm\\:col-rule-solid { column-rule-style: solid }
-      .sm\\:col-rule-double { column-rule-style: double }
-      .sm\\:col-rule-groove { column-rule-style: groove }
-      .sm\\:col-rule-ridge { column-rule-style: ridge }
-      .sm\\:col-rule-inset { column-rule-style: inset }
-      .sm\\:col-rule-outset { column-rule-style: outset }
+      .sm\\:column-rule-none { column-rule-style: none }
+      .sm\\:column-rule-hidden { column-rule-style: hidden }
+      .sm\\:column-rule-dotted { column-rule-style: dotted }
+      .sm\\:column-rule-dashed { column-rule-style: dashed }
+      .sm\\:column-rule-solid { column-rule-style: solid }
+      .sm\\:column-rule-double { column-rule-style: double }
+      .sm\\:column-rule-groove { column-rule-style: groove }
+      .sm\\:column-rule-ridge { column-rule-style: ridge }
+      .sm\\:column-rule-inset { column-rule-style: inset }
+      .sm\\:column-rule-outset { column-rule-style: outset }
 
-      .sm\\:col-fill-auto { column-fill: auto }
-      .sm\\:col-fill-balance { column-fill: balance }
-      .sm\\:col-fill-balance-all { column-fill: balance-all }
+      .sm\\:column-fill-auto { column-fill: auto }
+      .sm\\:column-fill-balance { column-fill: balance }
+      .sm\\:column-fill-balance-all { column-fill: balance-all }
 
-      .sm\\:col-span-none { column-span: none }
-      .sm\\:col-span-all { column-span: all }
+      .sm\\:column-span-none { column-span: none }
+      .sm\\:column-span-all { column-span: all }
     }
   `
 
