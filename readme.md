@@ -66,43 +66,43 @@ This means you won't be able to use `@apply` with those classes. Let me know if 
 ```
 
 ```css
-.col-count-1 { column-count: 1; }
-.col-count-2 { column-count: 2; }
-.col-count-3 { column-count: 3; }
+.column-count-1 { column-count: 1; }
+.column-count-2 { column-count: 2; }
+.column-count-3 { column-count: 3; }
 
-.col-gap-sm { column-gap: 1rem; }
-.col-gap-md { column-gap: 1.5rem; }
-.col-gap-lg { column-gap: 2rem; }
+.column-gap-sm { column-gap: 1rem; }
+.column-gap-md { column-gap: 1.5rem; }
+.column-gap-lg { column-gap: 2rem; }
 
-.col-w-sm { column-width: 120px; }
-.col-w-md { column-width: 240px; }
-.col-w-lg { column-width: 360px; }
+.column-w-sm { column-width: 120px; }
+.column-w-md { column-width: 240px; }
+.column-w-lg { column-width: 360px; }
 
-.col-rule-red { column-rule-color: red; }
-.col-rule-lime { column-rule-color: lime; }
-.col-rule-blue { column-rule-color: blue; }
+.column-rule-red { column-rule-color: red; }
+.column-rule-lime { column-rule-color: lime; }
+.column-rule-blue { column-rule-color: blue; }
 
-.col-rule { column-rule-width: 1px; }
-.col-rule-sm { column-rule-width: 2px; }
-.col-rule-md { column-rule-width: 4px; }
+.column-rule { column-rule-width: 1px; }
+.column-rule-sm { column-rule-width: 2px; }
+.column-rule-md { column-rule-width: 4px; }
 
-.col-rule-none { column-rule-style: none; }
-.col-rule-hidden { column-rule-style: hidden; }
-.col-rule-dotted { column-rule-style: dotted; }
-.col-rule-dashed { column-rule-style: dashed; }
-.col-rule-solid { column-rule-style: solid; }
-.col-rule-double { column-rule-style: double; }
-.col-rule-groove { column-rule-style: groove; }
-.col-rule-ridge { column-rule-style: ridge; }
-.col-rule-inset { column-rule-style: inset; }
-.col-rule-outset { column-rule-style: outset; }
+.column-rule-none { column-rule-style: none; }
+.column-rule-hidden { column-rule-style: hidden; }
+.column-rule-dotted { column-rule-style: dotted; }
+.column-rule-dashed { column-rule-style: dashed; }
+.column-rule-solid { column-rule-style: solid; }
+.column-rule-double { column-rule-style: double; }
+.column-rule-groove { column-rule-style: groove; }
+.column-rule-ridge { column-rule-style: ridge; }
+.column-rule-inset { column-rule-style: inset; }
+.column-rule-outset { column-rule-style: outset; }
 
-.col-fill-auto { column-fill: auto; }
-.col-fill-balance { column-fill: balance; }
-.col-fill-balance-all { column-fill: balance-all; }
+.column-fill-auto { column-fill: auto; }
+.column-fill-balance { column-fill: balance; }
+.column-fill-balance-all { column-fill: balance-all; }
 
-.col-span-none { column-span: none; }
-.col-span-all { column-span: all; }
+.column-span-none { column-span: none; }
+.column-span-all { column-span: all; }
 ```
 
 ## Credits

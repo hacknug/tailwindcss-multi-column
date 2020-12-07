@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-multi-column",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Multi-Column utilities for Tailwind CSS.",
   "keywords": [
     "plugin",
@@ -29,13 +29,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "flat": "^5.0.0",
-    "lodash": "^4.17.11"
+    "flat": "^5.0.2",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "jest": "^26.4.1",
-    "jest-matcher-css": "^1.0.3",
-    "postcss": "^8.0.9",
-    "tailwindcss": "^1.0.1"
+    "jest": "^26.6.3",
+    "jest-matcher-css": "^1.1.0",
+    "postcss": "^8.1.14",
+    "tailwindcss": "^2.0.1"
   }
 }
