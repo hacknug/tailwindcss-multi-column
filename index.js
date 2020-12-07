@@ -42,11 +42,11 @@ module.exports = function () {
     const pluginUtilities = {
       'column-count': buildConfig('columnCount'),
       'column-gap': buildConfig('columnGap', 'gap', 'gridGap'),
-      'column-width': buildConfig('columnWidth'),
+      'column-width': buildConfig('columnWidth', 'gap', 'gridGap'),
       'column-rule-color': buildConfig('columnRuleColor', 'borderColor'),
       'column-rule-width': buildConfig('columnRuleWidth', 'borderWidth'),
       'column-rule-style': buildConfig('columnRuleStyle'),
-      'column-fill': buildConfig('columnFill'),
+      'column-fill': buildConfig('columnFill', 'borderColor'),
       'column-span': buildConfig('columnSpan'),
     }
 
