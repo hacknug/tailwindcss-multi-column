@@ -46,7 +46,7 @@ module.exports = function () {
       'column-rule-color': buildConfig('columnRuleColor', 'borderColor'),
       'column-rule-width': buildConfig('columnRuleWidth', 'borderWidth'),
       'column-rule-style': buildConfig('columnRuleStyle'),
-      'column-fill': buildConfig('columnFill', 'borderColor'),
+      'column-fill': buildConfig('columnFill'),
       'column-span': buildConfig('columnSpan'),
     }
 
